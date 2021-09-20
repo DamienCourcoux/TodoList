@@ -1,0 +1,18 @@
+@use 'src/styles/vars';
+
+.header__input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  background: vars.$altColor;
+  border: none;
+  color: vars.$lightColor;
+
+  &::placeholder {
+    color: vars.$mainOpacityColor;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  }
+}

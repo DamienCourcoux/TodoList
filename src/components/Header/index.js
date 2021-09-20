@@ -3,7 +3,13 @@ import './header.scss';
 
 // == Composant
 const Header = () => (
-  <h1>Header</h1>
+  <header>
+    <input
+      type="text"
+      placeholder="Ajouter une tâche"
+      className="header__input"
+    />
+  </header>
 );
 
 // == Export
