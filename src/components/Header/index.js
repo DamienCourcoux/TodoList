@@ -20,7 +20,7 @@ const Header = ({ value, addTask }) => (
 // };
 
 Header.propTypes = {
-  value: PropTypes.array.isRequired,
+  value: PropTypes.string.isRequired,
   addTask: PropTypes.func.isRequired,
 };
 
