@@ -1,34 +1,33 @@
 // == Import
 import './todo.scss';
+import PropTypes from 'prop-types';
 
 // == Composant
-const Todo = () => (
+const Todo = ({ numberOfTodo, tasks }) => (
   <section className="todo__Container">
-    <p className="taskInProgress">2 tâches en cours</p>
+    <p className="taskInProgress">{numberOfTodo} tâches en cours</p>
     <form>
       <fieldset className="todo__fieldset">
-        <div className="todo__fieldset__container">
-          <label htmlFor="ketchup">
-            <input type="checkbox" name="todo" id="ketchup" value="ketchup" />
-            Ketchup
-          </label>
-        </div>
-        <div className="todo__fieldset__container">
-          <label htmlFor="pates">
-            <input type="checkbox" name="todo" id="pates" value="pates" />
-            Pâtes
-          </label>
-        </div>
-        <div className="todo__fieldset__container">
-          <label htmlFor="salade">
-            <input type="checkbox" name="todo" id="salade" value="salade" />
-            Salade
-          </label>
-        </div>
+        {
+          tasks.map((task) => (
+            <div key={task} className="todo__fieldset__container">
+              <label htmlFor={task}>
+                <input type="checkbox" name="todo" id={task} value={task} />
+                {task}
+              </label>
+            </div>
+          ))
+        }
       </fieldset>
     </form>
   </section>
 );
+
+// == PropTypes
+Todo.propTypes = {
+  numberOfTodo: PropTypes.number.isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+};
 
 // == Export
 export default Todo;

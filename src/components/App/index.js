@@ -7,7 +7,10 @@ import Todo from 'src/components/Todo';
 const App = () => (
   <div className="app">
     <Header />
-    <Todo />
+    <Todo
+      numberOfTodo={2}
+      tasks={['Ketchup', 'Pâtes', 'Salade']}
+    />
   </div>
 );
 
