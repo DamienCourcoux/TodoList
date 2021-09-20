@@ -10,10 +10,10 @@ const Todo = ({ numberOfTodo, tasks }) => (
       <fieldset className="todo__fieldset">
         {
           tasks.map((task) => (
-            <div key={task} className="todo__fieldset__container">
-              <label htmlFor={task}>
-                <input type="checkbox" name="todo" id={task} value={task} />
-                {task}
+            <div key={task.id} className="todo__fieldset__container">
+              <label htmlFor={task.id}>
+                <input type="checkbox" name="todo" id={task.id} value={task.label} />
+                {task.label}
               </label>
             </div>
           ))
@@ -26,7 +26,13 @@ const Todo = ({ numberOfTodo, tasks }) => (
 // == PropTypes
 Todo.propTypes = {
   numberOfTodo: PropTypes.number.isRequired,
-  tasks: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 // == Export
