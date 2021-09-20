@@ -10,18 +10,30 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      numberOfTodo: 2,
       tasks: tasksData,
+      valueOfNewTask: [],
     };
+
+    this.newTask = this.newTask.bind(this);
+  }
+
+  newTask(event) {
+    console.log(event.target.value);
+    this.setState({
+      valueOfNewTask: [event.target.value],
+    });
   }
 
   render() {
-    const { numberOfTodo, tasks } = this.state;
+    const { valueOfNewTask, tasks } = this.state;
     return (
       <div className="app">
-        <Header />
+        <Header
+          value={valueOfNewTask}
+          addTask={this.newTask}
+        />
         <Todo
-          numberOfTodo={numberOfTodo}
+          numberOfTodo={tasks.length}
           tasks={tasks}
         />
       </div>

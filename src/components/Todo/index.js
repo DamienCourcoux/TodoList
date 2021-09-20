@@ -12,7 +12,7 @@ const Todo = ({ numberOfTodo, tasks }) => (
           tasks.map((task) => (
             <div key={task.id} className="todo__fieldset__container">
               <label htmlFor={task.id}>
-                <input type="checkbox" name="todo" id={task.id} value={task.label} />
+                <input type="checkbox" name="todo" id={task.id} value={task.label} defaultChecked={task.done} />
                 {task.label}
               </label>
             </div>
