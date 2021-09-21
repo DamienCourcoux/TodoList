@@ -1,18 +1,18 @@
 @use 'src/styles/vars';
 
-.header__input {
+.form-item {
   width: 100%;
-  padding: 1rem;
-  font-size: 2rem;
+  color: vars.$lightColor;
+  font-size: 2em;
   background: vars.$altColor;
   border: none;
-  color: vars.$lightColor;
+  padding: 1rem;
 
   &::placeholder {
     color: vars.$mainOpacityColor;
   }
 
   &:hover {
-    box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
   }
 }
